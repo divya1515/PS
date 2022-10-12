@@ -21,7 +21,7 @@ void validvariable(string s)
    {
     flag=0;
    }
-   if(flag)
+   if(flag && i<32)
    cout<<"Valid"<<"\n";
    else
    cout<<"Invalid";
