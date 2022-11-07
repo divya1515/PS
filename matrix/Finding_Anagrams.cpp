@@ -1,25 +1,34 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-void finding_anagrams(string s1,string s2)
+
+void anagram(string a, string b)
 {
-    unordered_map<char,int>m;
-    for(int i=0;i<s1.length();i++)
+    unordered_map<char, int> mp;
+
+    for (int i = 0; i < a.length(); i++)
     {
-        m[s1[i]]++;
+        mp[a[i]]++;
     }
-    for(int i=0;i<s2.length();i++)
+
+    for (int i = 0; i < b.length(); i++)
     {
-        m[s2[i]]++;
+        mp[b[i]]--;
     }
-    for(auto it:m)
+
+    for (auto x : mp)
     {
-        if((it.second)&1)
-        cout<<it.first;
+        if (x.second != 0)
+        {
+            cout << x.first << " ";
+        }
     }
+    cout << endl;
 }
+
 int main()
 {
-    string s1,s2;
-    cin>>s1>>s2;
-    finding_anagrams(s1,s2);
+    string a, b;
+    cin >> a >> b;
+
+    anagram(a, b);
 }
